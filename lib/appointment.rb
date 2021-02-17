@@ -17,7 +17,7 @@ class Appointment
   end
 
   def patient
-    # patient.new_appointment
+    Patient.new(name)
   end
 
 end
