@@ -1,6 +1,7 @@
-class Doctor
+require 'pry'
 
-  attr_accessor :name, :patient, :appointment
+class Doctor
+  attr_accessor :name, :appointments
 
   @@all = []
 
@@ -14,9 +15,7 @@ class Doctor
   end
 
   def appointments
-    Appointment.all.select do |appointments|
-      appointments.doctor == self
-    end
+    Appointment.all.select {|appointment| appointment.doctor == self}
   end
 
   def new_appointment(date, patient)
@@ -24,11 +23,6 @@ class Doctor
   end
 
   def patients
-    appointments.collect do |appointment|
-      appointment.patient
-    end
+    appointments.map {|appointment| appointment.patient}
   end
-
-
-
 end
