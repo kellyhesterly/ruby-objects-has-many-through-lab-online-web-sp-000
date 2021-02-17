@@ -17,7 +17,7 @@ class Appointment
   end
 
   def patient
-    Patient.new
+    self.patient
   end
 
 end
